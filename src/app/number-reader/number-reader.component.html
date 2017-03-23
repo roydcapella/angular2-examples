@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-8 ">
+    <h3 *ngIf="response.length==0 || numero==null">Inserte un numero para transformarlo</h3>
+    <h3 *ngIf="response.length>0 && numero">El numero {{numero}} se lee: </h3>
+  </div>
+  <div class="col-xs-12 col-sm-4 ">
+    <br>
+     <form class="input-group" [formGroup]="frmConvert2Text" (ngSubmit)="doConvert2Text($event)">
+        <input  formControlName="numberValue" type="number" class="form-control"  [(ngModel)]="numero" placeholder="Ingrese un numero" required="" (keyup)="onlyNumber($event)" >
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">Calcular</button>
+          <button class="btn btn-info" type="button" *ngIf="response.length>0"  (click)="loadCode()" ><i class="fa fa-file-code-o"> </i></button>
+        </span>
+      </form>
+  </div>
+</div>
+
+<div class="row">
+
+    <div *ngIf="response.length>0" class="content-scrollable">
+      <div class="alert well" role="alert">
+          <h1>{{response}}</h1>
+      </div>
+    </div>
+    <div class="col-xs-12" *ngIf="code.length>0">
+      <h3>Conversor de numeros <small>Codigo Fuente</small></h3>
+        <pre>
+         <code [innerHTML]="code"></code>
+        </pre>
+      </div>
+  </div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row jumbotron">
+    <div class="container text-center">
+      <h1>Resolucion de ejercicios</h1>
+      <!--<h3 class="text-center">Selecione el ejercicio a visualizar</h3> *ngIf="currentView=='all'"-->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2 ">
+      <div class="list-group text-center">
+        <button type="button" class="list-group-item " [ngClass]="{'active': currentView=='contador' }"  (click)="showNow('contador')" >Contador de ceros</button>
+        <button type="button" class="list-group-item list-group-item-action" [ngClass]="{'active': currentView=='lector' }"   (click)="showNow('lector')">Lector de numero</button>
+        <button type="button" class="list-group-item list-group-item-action"  [ngClass]="{'active': currentView=='saltarin' }"  (click)="showNow('saltarin')">Caballo saltarin</button>
+      </div>
+    </div>
+
+  <div class="col-sm-10">
+    <div class="panel panel-primary">
+      <div class="panel-heading ">
+        {{title}}
+      </div>
+      <div class="panel-body">
+        <app-zerocounts *ngIf="currentView=='contador'"></app-zerocounts>
+        <app-horse-jump *ngIf="currentView=='saltarin'"></app-horse-jump>
+        <app-number-reader *ngIf="currentView=='lector'"></app-number-reader>
+      </div>
+      <!--
+      <div class="panel-footer">
+      </div> -->
+    </div>
+  </div>
+  </div>
