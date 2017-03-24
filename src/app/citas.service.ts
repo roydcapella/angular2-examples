@@ -36,26 +36,51 @@ viernes: [
 @Injectable()
 export class CitasService {
   private container: string[][];
+  private intervalos: string[];
 
   constructor() {
+    this.buildIntervalDay('08:00', '19:30', 30);
     this.populateContainer();
    }
 
-   populateContainer(){
-     for(var i: number = 0; i < 7; i++) {
-                var citasByDay = this.getCitasByDay(i);
-                 this.container[i] = [];
-                 for(var j: number = 0; j< 19; j++) {
+   buildIntervalDay(horaInicial, horaFinal, intervalo){
+  /*
+  var hora1 = ("04:29:01").split(":"),
+      hora2 = ("03:28:56").split(":"),
+      t1 = new Date(),
+      t2 = new Date();
 
-                     this.container[i][j] = new Cita();
+  t1.setHours(hora1[0], hora1[1], hora1[2]);
+  t2.set
+  */
+   }
+
+
+   populateContainer(){
+     var day = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
+     /*Recorremos los dias de la semana*/
+     for(var i: number = 0; i < 7; i++) {
+                var citasByDay = citas[day[i]]
+                 /*Recorremos los intervalos por cada dia*/
+                 for(var j: number = 0; j< 19; j++) {
                  }
              }
 
    }
 
-   getCitasByDay(dia:number){
+   getIntervalByDay(dia:number){
+
+
+
+
+
+     //[0]:lunes,... [7]domingo
+
      return citas.lunes;
    }
+
+
+
 
 }
 
