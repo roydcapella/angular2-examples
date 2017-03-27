@@ -7,30 +7,36 @@ import { Routes, RouterModule } from '@angular/router';
 
 /*bootstrap */
 import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
-
 import { AppComponent } from './app.component';
 
+/*Template*/
 import { TodoComponent } from './todo/todo.component';
-import { NavComponent } from './nav/nav.component';
-import { FooterComponent } from './footer/footer.component';
-import { MainComponent } from './main/main.component';
-import { ProgramacionComponent } from './programacion/programacion.component';
-import { DiseñoComponent } from './diseño/diseño.component';
-import { ModeloDatosComponent } from './modelo-datos/modelo-datos.component';
-import { ZerocountsComponent } from './zerocounts/zerocounts.component';
-import { NumberReaderComponent } from './number-reader/number-reader.component';
-import { HorseJumpComponent } from './horse-jump/horse-jump.component';
-import { CitasComponent } from './citas/citas.component';
+import { NavComponent } from './template/nav/nav.component';
+import { FooterComponent } from './template/footer/footer.component';
+import { MainComponent } from './template/main/main.component';
 
+
+/*Ejercicios programacion*/
+import { ProgramacionComponent } from './programacion/programacion.component';
+import { ZerocountsComponent } from './programacion/zerocounts/zerocounts.component';
+import { NumberReaderComponent } from './programacion/number-reader/number-reader.component';
+import { HorseJumpComponent } from './programacion/horse-jump/horse-jump.component';
+
+/*Ejercicios Modelo datos*/
+import { ModeloDatosComponent } from './modelo-datos/modelo-datos.component';
+
+/*Ejercicios Dise;o*/
+import { CitasComponent } from './diseno/citas/citas.component';
+import { DisenoComponent } from './diseno/diseno.component';
 
 const routes: Routes = [
-  { path: '**', component: ProgramacionComponent  },
-  { path: 'diseno', component: DiseñoComponent  },
-  { path: 'modelodatos', component: ModeloDatosComponent  }
+  { path: 'diseno', component: DisenoComponent  },
+  { path: 'modelado', component: ModeloDatosComponent  },
+  { path: '**', component: ProgramacionComponent  }
 ];
 
 /*
-
+DiseñoComponent,
 const routes: Routes = [
   { path: ':status', component: TodoComponent },
   { path: '/programacion', component: ProgramacionComponent  },
@@ -43,16 +49,17 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     TodoComponent,
+    DisenoComponent,
     NavComponent,
     FooterComponent,
     MainComponent,
     ProgramacionComponent,
-    DiseñoComponent,
     ModeloDatosComponent,
     HorseJumpComponent,
     ZerocountsComponent,
     NumberReaderComponent,
-    CitasComponent
+    CitasComponent,
+    DisenoComponent
   ],
   /*routes and modules*/
   imports: [

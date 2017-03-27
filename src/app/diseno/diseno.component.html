@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row jumbotron">
+    <div class="container text-center">
+      <h1>Resolucion de ejercicios</h1>
+      <!--<h3 class="text-center">Selecione el ejercicio a visualizar</h3> *ngIf="currentView=='all'"-->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2 ">
+      <div class="list-group text-center">
+        <button type="button" class="list-group-item " [ngClass]="{'active': currentView=='citas' }"  (click)="showNow('citas')" >Calendario de citas</button>
+        <button type="button" class="list-group-item list-group-item-action" [ngClass]="{'active': currentView=='cartas' }"   (click)="showNow('cartas')">Mazo de cartas</button>
+        <button type="button" class="list-group-item list-group-item-action"  [ngClass]="{'active': currentView=='colegio' }"  (click)="showNow('colegio')">Colegio POO</button>
+      </div>
+    </div>
+
+  <div class="col-sm-10">
+    <div class="panel panel-primary">
+      <div class="panel-heading ">
+        {{title}}
+      </div>
+      <div class="panel-body">
+        <app-citas *ngIf="currentView=='citas'"></app-citas>
+      </div>
+      <!--
+      <div class="panel-footer">
+      </div> -->
+    </div>
+  </div>
+  </div>
